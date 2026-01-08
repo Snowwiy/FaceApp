@@ -1,11 +1,4 @@
-<<<<<<< HEAD
 opencv-python
 numpy
 face_recognition
 deepface
-=======
-opencv-python
-numpy
-face_recognition
-deepface
->>>>>>> 000509f (Initial commit)
