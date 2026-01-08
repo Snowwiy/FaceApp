@@ -14,8 +14,8 @@ Crea un entorno virtual desde la raiz del proyecto, abre una terminal y ejecuta 
 1) python -m venv .venv
 2) Crea un venv (.\.venv\Scripts\Activate.ps1)
 3) Instala dependencias:
-pip install --upgrade pip
-pip install -r requirements.txt
+3.1) pip install --upgrade pip
+3.2) pip install -r requirements.txt
 Esto te deberia instalar lo siguiente:
 1) OpenCV
 Face_Recognition(dlib)
