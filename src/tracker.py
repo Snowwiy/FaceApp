@@ -84,3 +84,4 @@ class TrackManager:
         tid = self._next_id
         self._next_id += 1
         self.tracks[tid] = FaceTrack(track_id=tid, bbox=bbox, last_seen_ts=ts)
+

@@ -53,5 +53,4 @@ class FPSCounter:
     @property
     def fps(self) -> float:
         return self._fps
-
     
