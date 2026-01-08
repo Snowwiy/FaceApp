@@ -16,11 +16,11 @@ Crea un entorno virtual desde la raiz del proyecto, abre una terminal y ejecuta 
 3) Instala dependencias:
    1) pip install --upgrade pip
    2) pip install -r requirements.txt
-   3) Esto te deberia instalar lo siguiente:
-1) OpenCV
-2) Face_Recognition(dlib)
-3) DeepFace
-4) Numpy y dependencias necesarias
+      1)Esto te deberia instalar lo siguiente:
+         1) OpenCV
+         2) Face_Recognition(dlib)
+         3) DeepFace
+         4) Numpy y dependencias necesarias
 
 ## Agrega Rostros
 Pon imágenes en ./faces (ej: alice.jpg). El nombre del archivo será el label.
