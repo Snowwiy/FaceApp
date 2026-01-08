@@ -5,17 +5,17 @@ Permite identificar rostros conocidos y mostrar atributos básicos (edad, géner
 ## Requisitos Previos
 Antes de comenzar debes asegurarte de tener instalado lo siguiente:
 
-**Python 3.10 (64 bits)**
-**Git** Esto es opcional, solo es por si llegas a clonar el repositorio.
-**Win 10/11**
+1) **Python 3.10 (64 bits)**
+2) **Git** Esto es opcional, solo es por si llegas a clonar el repositorio.
+3) **Win 10/11**
 
 ## Setup
 Crea un entorno virtual desde la raiz del proyecto, abre una terminal y ejecuta lo siguiente:
 1) python -m venv .venv
 2) Crea un venv (.\.venv\Scripts\Activate.ps1)
 3) Instala dependencias:
-   pip install --upgrade pip
-   pip install -r requirements.txt
+pip install --upgrade pip
+pip install -r requirements.txt
 Esto te deberia instalar lo siguiente:
 1) OpenCV
 Face_Recognition(dlib)
