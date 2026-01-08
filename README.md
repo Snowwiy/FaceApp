@@ -16,7 +16,7 @@ Crea un entorno virtual desde la raiz del proyecto, abre una terminal y ejecuta 
 3) Instala dependencias:
    1) pip install --upgrade pip
    2) pip install -r requirements.txt
-      1)Esto te deberia instalar lo siguiente:
+      1) Esto te deberia instalar lo siguiente:
          1) OpenCV
          2) Face_Recognition(dlib)
          3) DeepFace
