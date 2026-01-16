@@ -31,6 +31,7 @@ class FaceAnalyzer:
             align=cfg.deepface_align,
             max_queue_size=cfg.max_queue_size,
             actions=("age", "gender", "emotion"),
+            use_gpu=cfg.use_gpu,
         )
 
         self.fps = FPSCounter()
@@ -81,12 +82,16 @@ class FaceAnalyzer:
                         tr.last_attr_ts = res.ts
 
                 # Detectar caras
-                if frame_index % self.cfg.detect_every_n_frames == 0:
-                    self._last_face_locations = face_recognition.face_locations(frame_rgb, model="hog")
-                    self._last_face_encodings = (face_recognition.face_encodings(frame_rgb, self._last_face_locations)
+                do_detect = (frame_index % self.cfg.detect_every_n_frames == 0)
+                if do_detect:
+                    face_locations = face_recognition.face_locations(frame_rgb, model="hog")
+                    face_encs = (face_recognition.face_encodings(frame_rgb, face_locations) if face_locations else []
                     )
-                face_locations: List[Tuple[int,int,int,int]] = self._last_face_locations
-                face_encs = self._last_face_encodings
+                    self._last_face_locations = face_locations
+                    self._last_face_encodings = face_encs
+                else:
+                    face_locations = self._last_face_locations
+                    face_encs = self._last_face_encodings
 
                 # Tracking
                 self.tracks.update(face_locations, ts)

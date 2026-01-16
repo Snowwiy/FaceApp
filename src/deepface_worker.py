@@ -27,12 +27,14 @@ class DeepFaceWorker:
         align: bool,
         max_queue_size: int = 4,
         actions = ("age", "gender", "emotion"),
+        use_gpu: bool = False,
     ):
         self.detector_backend = detector_backend
         self.enforce_detection = enforce_detection
         self.align = align
         self.actions = list(actions)
-
+        self.use_gpu = use_gpu
+        
         self.req_q: "queue.Queue[AnalysisRequest]" = queue.Queue(maxsize=max_queue_size)
         self.res_q: "queue.Queue[AnalysisResult]" = queue.Queue()
         self._stop = threading.Event()
@@ -75,6 +77,7 @@ class DeepFaceWorker:
                     enforce_detection=self.enforce_detection,
                     detector_backend=self.detector_backend,
                     align=self.align,
+                    device="cuda" if self.use_gpu else "cpu",
                 )
 
                 if isinstance(analysis, list) and analysis:

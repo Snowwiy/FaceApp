@@ -8,6 +8,7 @@ class AppConfig:
 
     # Recognition
     tolerance: float = 0.6
+    min_margin: float = 0.03
     vote_window: int = 7
 
     # Tracking
@@ -15,16 +16,18 @@ class AppConfig:
     track_ttl_seconds: float = 1.0
 
     # DeepFace scheduling
-    detect_every_n_frames: int = 3
-    analysis_every_n_frames: int = 90
+    detect_every_n_frames: int = 5
+    analysis_every_n_frames: int = 60
     attribute_ttl_seconds: float = 5.0
     max_queue_size: int = 1
     deepface_backend: str = "opencv"     # "opencv" o "retinaface"
     deepface_align: bool = False
     deepface_enforce_detection: bool = False
+    use_gpu: bool = True
 
     # Performance
-    resize_width_for_speed: int = 640
+    resize_width_for_speed: int = 960
+    
 
     # UI
     color_known_bgr: Tuple[int, int, int] = (0, 255, 80)   # neon green
